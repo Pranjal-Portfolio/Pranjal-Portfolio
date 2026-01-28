@@ -1,0 +1,609 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pranjal — Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+  <!-- Magic cursor -->
+  <div id="magic-cursor" aria-hidden="true"><div id="ball"></div></div>
+
+  <!-- Loader -->
+  <div id="pageLoader"><img src="assets/images/loader-2.gif" alt="Loading"></div>
+
+  <!-- Header 
+  <header class="topbar py-3">
+    <div class="container d-flex align-items-center justify-content-between gap-3">
+      <div class="d-flex align-items-center gap-3">
+        <a class="brand" href="index.html">PRANJAL/</a>
+        <div class="smallcaps"><span id="localTime">00:00:00</span></div>
+      </div>
+
+      <div class="d-flex align-items-center gap-2">
+        <a class="btn btn-outline-soft d-none d-md-inline-flex" href="contact.html">
+          Schedule a call <i class="bi bi-arrow-up-right ms-2"></i>
+        </a>
+
+        <button class="icon-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#menu" aria-label="Open menu">
+          <i class="bi bi-list fs-4"></i>
+        </button>
+      </div>
+    </div>
+  </header>-->
+
+  <!-- Offcanvas menu -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="menu">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title brand">Navigate Here</h5>
+      <button type="button" class="icon-btn" data-bs-dismiss="offcanvas" aria-label="Close menu"><i class="bi bi-x-lg"></i></button>
+    </div>
+    <div class="offcanvas-body">
+      <a class="navlink" href="index.html"><span>(1) Home</span><i class="bi bi-arrow-right"></i></a>
+      <a class="navlink" href="work.html"><span>(2) Work</span><i class="bi bi-arrow-right"></i></a>
+      <a class="navlink" href="photography.html"><span>(3) Photography</span><i class="bi bi-arrow-right"></i></a>
+      <a class="navlink" href="pricing.html"><span>(4) Pricing</span><i class="bi bi-arrow-right"></i></a>
+      <a class="navlink" href="contact.html"><span>(5) Contact</span><i class="bi bi-arrow-right"></i></a>
+
+      <div class="mt-4 smallcaps">AVAILABLE FOR FREELANCE</div>
+      <hr class="hr-soft my-3">
+      <div class="d-flex gap-3 flex-wrap">
+        <a class="btn btn-outline-soft" href="#" onclick="return false;">Instagram</a>
+        <a class="btn btn-outline-soft" href="#" onclick="return false;">Dribbble</a>
+        <a class="btn btn-outline-soft" href="#" onclick="return false;">Twitter</a>
+      </div>
+    </div>
+  </div>
+
+
+  <main>
+
+    <!-- ✅ INTRO HERO -->
+    <section class="hero-intro">
+      <div class="container">
+        <div class="hero-intro-center">
+          <div class="hero-intro-status">
+            <span class="dot"></span> OPEN TO OPPORTUNITIES
+          </div>
+
+          <h1 class="hero-display">PRANJAL<br />PATIL</h1>
+        </div>
+
+        <div class="hero-intro-bottom">
+          <div class="hero-corner">BASED IN UNITED STATES</div>
+          <div class="hero-corner">MECHANICAL ENGINEER</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Full image -->
+    <section class="full-image-sec pt-0">
+      <div class="container-fluid heroimage-pranjal">
+        <div
+          class="full-image-box sink-frame"
+          id="heroSink"
+          data-sink="1"
+          tabindex="0"
+          data-animate="scale-in"
+        >
+          <img class="sink-img" src="assets/images/portfolio_avatar_8k_ultra_hd_more_texture.png" alt="Full hero">
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured work -->
+    <section class="section" id="work">
+      <div class="container-fluid p-5">
+        <div class="featured-head" data-animate="fade-up">
+          <h2 class="featured-title">FEATURED<br>WORK</h2>
+
+          <div class="featured-right">
+            <p class="featured-copy">
+              I design and engineer real products from early concepts to production ready CAD. I specialize in mechanism design, DFM/DFA, tolerance strategy, and prototyping to build hardware that works and lasts.
+            </p>
+          </div>
+        </div>
+
+        <div class="row g-3 mt-3" data-stagger="cards">
+          <div class="col-md-6 col-lg-6">
+            <a class="work-card d-block"
+   href="assets/images/QuadCopter.mp4"
+   target="_blank"
+   rel="noopener">
+
+              <model-viewer
+  class="work-thumb work-model"
+  src="./assets/images/quadcopter_drone.glb"
+  alt="Quadcopter Drone"
+  auto-rotate
+  auto-rotate-delay="0"
+  rotation-per-second="20deg"
+  interaction-prompt="none"
+
+  disable-zoom
+  disable-pan
+
+  pointer-events="none"
+>
+</model-viewer>
+
+
+
+              <!--<img class="work-thumb" src="assets/images/quadcopter_drone.glb" alt="Work">-->
+              <div class="work-body">
+                <h5 class="work-title">QuadCopter Drone</h5>
+                <div class="work-meta"><span class="pill">Electromechanical Integration</span></div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-md-6 col-lg-6">
+            <a class="work-card d-block"
+   href="assets/images/KingPiece.mp4"
+   target="_blank"
+   rel="noopener">
+              <model-viewer
+  class="work-thumb work-model"
+  src="./assets/images/king_chess__piece_-_high_poly.glb"
+  alt="Quadcopter Drone"
+  auto-rotate
+  auto-rotate-delay="0"
+  rotation-per-second="20deg"
+  interaction-prompt="none"
+
+  disable-zoom
+  disable-pan
+
+  pointer-events="none"
+>
+</model-viewer>
+              <div class="work-body">
+                <h5 class="work-title">King Piece</h5>
+                <div class="work-meta"><span class="pill">Mold Design - Sand Casting</span></div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-md-6 col-lg-6">
+            <a class="work-card d-block"
+   href="assets/images/iphone 16 pro max.mp4"
+   target="_blank"
+   rel="noopener">
+               <model-viewer
+  class="work-thumb work-model"
+  src="./assets/images/iphone_16_pro_max.glb"
+  alt="Quadcopter Drone"
+  auto-rotate
+  auto-rotate-delay="0"
+  rotation-per-second="20deg"
+  interaction-prompt="none"
+
+  disable-zoom
+  disable-pan
+
+  pointer-events="none"
+>
+</model-viewer>
+              <div class="work-body">
+                <h5 class="work-title">iPhone 16 Pro Max</h5>
+                <div class="work-meta"><span class="pill">CAD Design</span></div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-md-6 col-lg-6">
+            <a class="work-card d-block"
+   href="assets/images/EarbudsCase.mp4"
+   target="_blank"
+   rel="noopener">
+                <model-viewer
+  class="work-thumb work-model"
+  src="./assets/images/apple_logo.glb"
+  alt="3D model"
+  auto-rotate
+  rotation-per-second="20deg"
+  interaction-prompt="none"
+  camera-controls="false"
+
+  environment-image="https://modelviewer.dev/shared-assets/environments/neutral.hdr"
+  exposure="1.1"
+  shadow-intensity="0.2"
+  ar
+>
+</model-viewer>
+
+              <div class="work-body">
+                <h5 class="work-title">Apple Logo Shaped AirPod Case</h5>
+                <div class="work-meta"><span class="pill">CAD Design</span></div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-md-6 col-lg-6">
+            <a class="work-card d-block"
+   href="assets/images/Wheel.mp4"
+   target="_blank"
+   rel="noopener">
+              <model-viewer
+  class="work-thumb work-model"
+  src="./assets/images/work_schwert_sc4.glb"
+  alt="3D model"
+  auto-rotate
+  rotation-per-second="20deg"
+  interaction-prompt="none"
+  camera-controls="false"
+
+  environment-image="https://modelviewer.dev/shared-assets/environments/neutral.hdr"
+  exposure="1.1"
+  shadow-intensity="0.2"
+  ar
+>
+</model-viewer>
+              <div class="work-body">
+                <h5 class="work-title">Wheel Design</h5>
+                <div class="work-meta"><span class="pill">CAD Design</span></div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-md-6 col-lg-6">
+            <a class="work-card d-block"
+   href="assets/images/crankshaft.mp4"
+   target="_blank"
+   rel="noopener">
+              <model-viewer
+  class="work-thumb work-model"
+  src="./assets/images/engine.glb"
+  alt="3D model"
+  auto-rotate
+  rotation-per-second="20deg"
+  interaction-prompt="none"
+  camera-controls="false"
+
+  environment-image="https://modelviewer.dev/shared-assets/environments/neutral.hdr"
+  exposure="1.1"
+  shadow-intensity="0.2"
+  ar
+>
+</model-viewer>
+              <div class="work-body">
+                <h5 class="work-title">Crank Shaft Design</h5>
+                <div class="work-meta"><span class="pill">CAD Design</span></div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- More About -->
+    <section class="about-showcase section" id="about">
+      <div class="container mt-5">
+        <div class="kicker text-center" data-animate="fade-up">MORE ABOUT</div>
+        <h2 class="about-showcase-title" data-animate="fade-up">PRANJAL</h2>
+
+        <!--<div class="about-circle" data-animate="scale-in" aria-hidden="true">
+          <img src="assets/images/about.png" alt="About portrait">
+        </div>-->
+
+        <div class="moreabtimg">
+          <img src="assets/images/final-mrabtimg.png" alt="">
+        </div>
+
+        <div class="about-showcase-copy" data-animate="fade-up">
+          <p class="about-showcase-quote">
+            I'M AN INNOVATIVE DESIGNER AND MY PASSION FOR MINIMALIST AESTHETICS,
+            AND INTUITIVE DESIGN SHINES THROUGH, IN MY WORK.
+          </p>
+
+          <p class="about-showcase-muted">
+            I’m Pranjal, a Mechanical Engineer who doesn’t just make pretty CAD. I build parts that work in the real world, even when PHYSICS gets ATTITUDE. I blend precision design, rapid prototyping, and hands-on manufacturing to take ideas from <em>“looks good on screen”</em> to <em>“works on the bench,”</em> because the best designs are the ones you can actually make.
+          </p>
+
+          
+        </div>
+      </div>
+
+      <div class="logo-marquee" aria-label="Brands">
+        <div class="logo-track">
+          <div class="logo-card"><img src="assets/images/Ansys_logo-removebg-preview (1).png" alt="Brand"></div>
+          <div class="logo-card"><img src="assets/images/autocad-logo.png" alt="Brand"></div>
+          <div class="logo-card"><img src="assets/images/Catia-logo-removebg-preview (1).png" alt="Brand"></div>
+          <div class="logo-card"><img src="assets/images/creo-logo-removebg-preview (1).png" alt="Brand"></div>
+          <div class="logo-card"><img src="assets/images/sw-logo.png" alt="Brand"></div>
+          <div class="logo-card"><img src="assets/images/snx.png" alt="Brand"></div>
+          <div class="logo-card"><img src="assets/images/lss-removebg-preview.png" alt="Brand"></div>
+
+          <div class="logo-card"><img src="assets/images/Ansys_logo.jpg" alt="Brand"></div>
+          <div class="logo-card"><img src="assets/images/autocad-logo.png" alt="Brand"></div>
+          <div class="logo-card"><img src="assets/images/Catia-logo.jpg" alt="Brand"></div>
+          <div class="logo-card"><img src="assets/images/creo-logo.png" alt="Brand"></div>
+          <div class="logo-card"><img src="assets/images/sw-logo.png" alt="Brand"></div>
+          <div class="logo-card"><img src="assets/images/snx.png" alt="Brand"></div>
+          <div class="logo-card"><img src="assets/images/lss.jpg" alt="Brand"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Expertise -->
+    <section class="section expertise-section" id="services">
+      <div class="container-fluid px-4 px-md-5">
+        <div class="expertise-head" data-animate="fade-up">
+          <h2 class="expertise-title">MY<br>EXPERTISE</h2>
+        </div>
+
+        <div class="row g-4 mt-4">
+          <div class="col-lg-4">
+            <div class="experience-box h-100" data-animate="fade-up">
+              <h4><span>3D CAD</span></h4>
+              <ul class="experience-box-ul">
+                <li class="experience-box-ul-li">SolidWorks</li>
+                <li class="experience-box-ul-li">Siemens NX</li>
+                <li class="experience-box-ul-li">CATIA</li>
+                <li class="experience-box-ul-li">AutoCAD</li>
+              </ul>
+              
+
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="experience-box h-100" data-animate="fade-up">
+              <h4><span>Design</span></h4>
+               <ul class="experience-box-ul">
+                <li class="experience-box-ul-li">2D Drafting & Documentation</li>
+                <li class="experience-box-ul-li">GD&T (ASME Y14.5)</li>
+                <li class="experience-box-ul-li">Tolerance Stack-Up Analysis</li>
+                <li class="experience-box-ul-li">Mechanism Design</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="experience-box h-100" data-animate="fade-up">
+              <h4><span>Analysis</span></h4>
+               <ul class="experience-box-ul">
+                <li class="experience-box-ul-li">FEA - ANSYS</li>
+                <li class="experience-box-ul-li">DFMEA</li>
+                <li class="experience-box-ul-li">Root Cause Analysis</li>
+                <li class="experience-box-ul-li">DVP&R</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-4 mt-2">
+          <div class="col-lg-6">
+            <div class="experience-box h-100" data-animate="fade-up">
+              <h4><span>Manufacturing & Tooling</span></h4>
+               <ul class="experience-box-ul">
+                <li class="experience-box-ul-li">Design-for-manufacturing (DFM)</li>
+                <li class="experience-box-ul-li">Design-for-assembly (DFA)</li>
+                <li class="experience-box-ul-li">Fixture & Jig</li>
+                <li class="experience-box-ul-li">Injection Molding & Casting</li>
+                <li class="experience-box-ul-li">SheetMetal</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="experience-box h-100" data-animate="fade-up">
+              <h4><span>Electromechanical Integration</span></h4>
+               <ul class="experience-box-ul">
+                <li class="experience-box-ul-li">PCB Enclosure Design</li>
+                <li class="experience-box-ul-li">Layout & Mounting</li>
+                <li class="experience-box-ul-li">Integration Troubleshooting</li>
+                <li class="experience-box-ul-li">Rapid Prototyping</li>
+                <li class="experience-box-ul-li">3D Printing</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Motivation -->
+    <section class="section motivation-section" id="motivation">
+      <div class="container-fluid px-4 px-md-5">
+        <div class="motivation-grid">
+          <div class="motivation-left" data-animate="fade-up">
+            <h2 class="motivation-title">MOTIVATION</h2>
+          </div>
+
+          <div class="motivation-right">
+            <p class="motivation-p" data-animate="fade-up">
+              I’m motivated by the journey from “could this work?” to “this is ready to build.” I enjoy shaping concepts into practical designs thinking through fit, alignment, and manufacturability so the first build isn’t a surprise and the tenth build is effortless.
+
+            </p>
+
+            <p class="motivation-p" data-animate="fade-up">
+             What keeps me excited is the loop of build-learn-refine. I like chasing root causes, validating choices with analysis and testing, and iterating until the design feels “quiet” in production reliable, repeatable, and ready to ship.
+
+            </p>
+          
+            <div class="motivation-sign" data-animate="fade-up"><img src="./assets/images/ChatGPT Image Jan 22, 2026, 07_37_25 PM.png" alt=""></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience (sticky)
+    <section class="section sticky-elem-sec" id="experience">
+      <div class="container  ">
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <div class="sticky-col">
+              <div class="kicker" data-animate="fade-up">EXPERIENCE</div>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="vstack gap-3">
+              <div class="timeline-card" data-animate="fade-up">
+                <div class="timeline-head">CLAVMEN STUDIO</div>
+                <div class="timeline-body">
+                  <h4>SENIOR UX DESIGNER </h4>
+                  <p class="muted mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, dicta.</p>
+                </div>
+              </div>
+
+              <div class="timeline-card" data-animate="fade-up">
+                <div class="timeline-head">LOSIFY</div>
+                <div class="timeline-body">
+                  <h4>LEAD PRODUCT DESIGNER </h4>
+                  <p class="muted mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, dicta.</p>
+                </div>
+              </div>
+
+              <div class="timeline-card" data-animate="fade-up">
+                <div class="timeline-head">GAMADIAS</div>
+                <div class="timeline-body">
+                  <h4>JUNIOR UX DESIGNER </h4>
+                  <p class="muted mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, dicta.</p>
+                </div>
+              </div>
+
+              <div class="timeline-card" data-animate="fade-up">
+                <div class="timeline-head">FREELANCE</div>
+                <div class="timeline-body">
+                  <h4>WEB DESIGNER </h4>
+                  <p class="muted mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, dicta.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>-->
+
+
+    <!-- Favourite stack 
+    <section class="section sticky-elem-sec" id="stack">
+      <div class="container  ">
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <div class="sticky-col">
+              <div class="kicker" data-animate="fade-up">FAVOURITE STACK</div>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="vstack gap-3" data-stagger="cards">
+              <div class="stack-card" data-animate="fade-up">
+                <div class="stack-icon"><img src="assets/images/framer.png" alt="Framer"></div>
+                <div class="stack-content">
+                  <div class="stack-top"><h4>WEBFLOW</h4><span class="muted">95%</span></div>
+                  <p class="muted mb-0">The internet is your canvas. WEBFLOW is where design and publish stunning sites.</p>
+                </div>
+              </div>
+
+              <div class="stack-card" data-animate="fade-up">
+                <div class="stack-icon"><img src="assets/images/figma.png" alt="Figma"></div>
+                <div class="stack-content">
+                  <div class="stack-top"><h4>FIGMA</h4><span class="muted">98%</span></div>
+                  <p class="muted mb-0">Figma is a collaborative web application for interface design with offline features.</p>
+                </div>
+              </div>
+
+              <div class="stack-card" data-animate="fade-up">
+                <div class="stack-icon"><img src="assets/images/js.png" alt="JavaScript"></div>
+                <div class="stack-content">
+                  <div class="stack-top"><h4>JAVASCRIPT</h4><span class="muted">92%</span></div>
+                  <p class="muted mb-0">JavaScript is a programming language and technology alongside HTML and CSS.</p>
+                </div>
+              </div>
+
+              <div class="stack-card" data-animate="fade-up">
+                <div class="stack-icon"><img src="assets/images/apple.png" alt="Apple"></div>
+                <div class="stack-content">
+                  <div class="stack-top"><h4>APPLE</h4><span class="muted">iPad</span></div>
+                  <p class="muted mb-0">Apple Inc. is an American multinational tech company headquartered in California.</p>
+                </div>
+              </div>
+
+              <div class="stack-card" data-animate="fade-up">
+                <div class="stack-icon"><img src="assets/images/nvidia.png" alt="NVIDIA"></div>
+                <div class="stack-content">
+                  <div class="stack-top"><h4>NVIDIA</h4><span class="muted">RTX 4090 TI</span></div>
+                  <p class="muted mb-0">NVIDIA drives advances in AI, HPC, gaming, creative design, and robotics.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>-->
+
+     <!-- CTA -->
+    <section class="section" id="cta">
+      <div class="container mt-5 ">
+        <div class="cta-top" data-animate="fade-up">
+          <div>
+            <div class="kicker">LET'S WORK TOGETHER</div>
+            <h2 class="section-title">Every opportunity is a step forward. Eager to collaborate, learn and grow. Reach out any time!</h2>
+          </div>
+          <a class="btn btn-outline-soft" href="contact.html">CONTACT NOW <i class="bi bi-arrow-up-right ms-2"></i></a>
+        </div>
+
+        <div class="row g-3 mt-3 align-items-stretch">
+          <div class="col-lg-5">
+            <img class = "contactimg" src="assets/images/aboutimg.png" alt="CTA" data-parallax="16">
+            <!--<div class="about-card " data-animate="scale-in">
+              <img src="assets/images/aboutimg.png" alt="CTA" data-parallax="16">
+            </div>-->
+          </div>
+          <div class="col-lg-7">
+            <div class="about-card h-100 p-4 p-md-5" data-animate="fade-up">
+              <p class="mb-4">With a background in precision CAD, GD&T and DFM/DFA thinking, I bring both functional and visual clarity to every project.</p>
+              <div class="social d-flex gap-3 flex-wrap">
+                <a class="btn btn-outline-soft" href="https://www.linkedin.com/in/phktpatil" onclick="return true;">LinkedIn <i class="bi bi-arrow-up-right ms-2"></i></a>
+               
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-cta d-flex align-items-center justify-content-between flex-wrap gap-3" data-animate="fade-up">
+        <div class="footer-big">PRANJAL PATIL</div>
+        <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
+          <div class="smallcaps">Designed and Created @2026</div>
+          
+        </div>
+      </div>
+    </div>
+  </footer>
+  <button id="backToTop" class="icon-btn" type="button" aria-label="Back to top">
+     <i class="bi bi-arrow-up"></i>
+  </button>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- GSAP + ScrollTrigger -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+
+  <!-- Lenis -->
+   <script src="node_modules/lenis/dist/lenis.min.js"></script>
+  <!--<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>-->
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

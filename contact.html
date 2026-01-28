@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact — Pranjal</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+  <div id="magic-cursor" aria-hidden="true"><div id="ball"></div></div>
+  <div id="pageLoader"><img src="assets/images/loader-2.gif" alt="Loading"></div>
+
+  <!--<header class="topbar py-3">
+    <div class="container   d-flex align-items-center justify-content-between gap-3">
+      <div class="d-flex align-items-center gap-3">
+        <a class="brand" href="index.html">LOCAL/</a>
+        <div class="smallcaps"><span id="localTime">00:00:00</span></div>
+      </div>
+      <div class="d-flex align-items-center gap-2">
+        <a class="btn btn-outline-soft d-none d-md-inline-flex" href="contact.html">Schedule a call <i class="bi bi-arrow-up-right ms-2"></i></a>
+        <button class="icon-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#menu" aria-label="Open menu"><i class="bi bi-list fs-4"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="menu">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title brand">Navigate Here</h5>
+      <button type="button" class="icon-btn" data-bs-dismiss="offcanvas"><i class="bi bi-x-lg"></i></button>
+    </div>
+    <div class="offcanvas-body">
+      <a class="navlink" href="index.html"><span>(1) Home</span><i class="bi bi-arrow-right"></i></a>
+      <a class="navlink" href="work.html"><span>(2) Work</span><i class="bi bi-arrow-right"></i></a>
+      <a class="navlink" href="photography.html"><span>(3) Photography</span><i class="bi bi-arrow-right"></i></a>
+      <a class="navlink" href="pricing.html"><span>(4) Pricing</span><i class="bi bi-arrow-right"></i></a>
+      <a class="navlink" href="contact.html"><span>(5) Contact</span><i class="bi bi-arrow-right"></i></a>
+
+      <div class="mt-4 smallcaps">AVAILABLE FOR FREELANCE</div>
+      <hr class="hr-soft my-3">
+      <div class="d-flex gap-3 flex-wrap">
+        <a class="btn btn-outline-soft" href="#" onclick="return false;">Instagram</a>
+        <a class="btn btn-outline-soft" href="#" onclick="return false;">Dribbble</a>
+        <a class="btn btn-outline-soft" href="#" onclick="return false;">Twitter</a>
+      </div>
+    </div>
+  </div>-->
+
+  <main>
+    <section class="section">
+      <div class="container  ">
+        <div class="kicker" data-animate="fade-up">Contact</div>
+        <h1 class="section-title" data-animate="fade-up">Let’s build something</h1>
+
+        <div class="row g-3 mt-3">
+          <div class="col-lg-5">
+            <div class="panel p-4" data-animate="fade-up">
+              <h3 class="mb-3">Details</h3>
+              <p class="muted">Hello, I'm Pranjal, Feel Free to Contact Me..!</p>
+              <div class="clean-list">
+                <div class="d-flex justify-content-between"><span class="muted">Email</span><span>pranjalpatilofficial@gmail.com</span></div>
+                
+                <div class="d-flex justify-content-between"><span class="muted">Location</span><span>USA</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-7">
+            <form class="panel p-4"
+      action="https://formspree.io/f/mojejrno"
+      method="POST">
+
+  <div class="row g-3">
+    <div class="col-md-6">
+      <label class="form-label">Name</label>
+      <input class="form-control form-control-dark"
+             name="name"
+             required
+             placeholder="Your name" />
+    </div>
+
+    <div class="col-md-6">
+      <label class="form-label">Email</label>
+      <input type="email"
+             class="form-control form-control-dark"
+             name="email"
+             required
+             placeholder="you@email.com" />
+    </div>
+
+    <div class="col-12">
+      <label class="form-label">Message</label>
+      <textarea class="form-control form-control-dark"
+                name="message"
+                rows="5"
+                required
+                placeholder="Tell me about your project..."></textarea>
+    </div>
+  </div>
+
+  <!-- Optional: email subject -->
+  <input type="hidden" name="_subject" value="New message from portfolio site" />
+
+  <button class="btn btn-outline-soft mt-3" type="submit">
+    Send message <i class="bi bi-arrow-up-right ms-2"></i>
+  </button>
+</form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section pt-0">
+      <!--<div class="container  ">
+        <div class="full-image" data-animate="scale-in">
+          <img src="assets/images/about-3.jpeg" alt="Full image" data-parallax="18">
+        </div>
+      </div>-->
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container  ">
+      <div class="footer-cta" data-animate="fade-up">
+        <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
+          <div class="smallcaps">Pranjal Patil | Designed and Created @2026</div>
+          <a class="smallcaps" href="index.html">Back to home</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button id="backToTop" class="icon-btn" type="button" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+  <script src="node_modules/lenis/dist/lenis.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
