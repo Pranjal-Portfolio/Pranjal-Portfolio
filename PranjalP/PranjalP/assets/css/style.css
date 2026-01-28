@@ -1,0 +1,962 @@
+:root{
+  --bg:#000000;
+  --panel:#101010;
+  --text:#f8f6f6;
+  --muted:#a8a8a8;
+  --border:#242424;
+  --soft:#151515;
+  --accent:#ffffff;
+  --radius:22px;
+
+  /* ✅ used ONLY for CTA + Footer reveal */
+  --footer-reveal: clamp(150px, 18vh, 230px);
+}
+
+*{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; } /* let Lenis handle smooth scroll */
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  letter-spacing:.2px;
+  overflow-x:hidden;
+}
+
+/* subtle grain/noise overlay "graphics vibe" */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.14'/%3E%3C/svg%3E");
+  opacity:.08;
+  mix-blend-mode:overlay;
+  z-index:1;
+}
+main, header, footer, .offcanvas{ position:relative; z-index:2; }
+
+a{ color:var(--text); text-decoration:none; }
+a:hover{ color:var(--accent); }
+
+.container-narrow{ max-width:1100px; }
+
+.hr-soft{
+  border-color:var(--border) !important;
+  opacity:1;
+}
+
+.badge-soft{
+  border:1px solid var(--border);
+  background:transparent;
+  color:var(--text);
+  font-weight:600;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  padding:.55rem .9rem;
+  border-radius:999px;
+}
+
+.muted{ color:var(--muted); }
+.smallcaps{
+  font-size:.82rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+
+.section{
+  padding:72px 0;
+}
+
+.section-title{
+  font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+  letter-spacing:-.02em;
+  margin:0;
+}
+
+/* Top bar */
+.topbar{
+  position:sticky;
+  top:0;
+  z-index:1030;
+  backdrop-filter: blur(12px);
+  background: rgba(11,11,11,.72);
+  border-bottom:1px solid var(--border);
+}
+
+.brand{
+  font-weight:800;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  font-size:.95rem;
+}
+
+.icon-btn{
+  width:44px; height:44px;
+  display:inline-grid;
+  place-items:center;
+  border:1px solid var(--border);
+  border-radius:999px;
+  background:transparent;
+  color:var(--text);
+}
+.icon-btn:hover{ border-color:#3a3a3a; }
+
+.btn-outline-soft{
+  border:1px solid var(--border);
+  color:var(--text);
+  background:transparent;
+  border-radius:999px;
+  padding:.65rem 1rem;
+}
+.btn-outline-soft:hover{ border-color:#3a3a3a; }
+
+.offcanvas{
+  background:var(--bg);
+  border-left:1px solid var(--border);
+}
+.navlink{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:14px 0;
+  border-bottom:1px solid var(--border);
+  font-size:1.05rem;
+}
+.navlink span:first-child{
+  color:var(--muted);
+  font-size:.9rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+}
+
+/* Loader */
+#pageLoader{
+  position:fixed;
+  inset:0;
+  background:var(--bg);
+  z-index:9999;
+  display:grid;
+  place-items:center;
+}
+#pageLoader img{
+  width:120px;
+  height:auto;
+  opacity:.9;
+}
+
+/* ✅ INTRO HERO */
+.hero-intro{
+  padding: 0;
+}
+.hero-intro .container{
+  
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;   /* ✅ was center */
+  height: 800px;           /* ✅ controls the gap above */
+  text-align: center;
+  margin-top: -540px;
+}
+
+
+.hero-intro-center{
+  transform: translateY(-50px);
+  transform: translateX(350px);
+  
+}
+
+.hero-intro-status{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 200;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 18px;
+}
+
+.hero-intro-status .dot{
+  width: 10px;
+  height: 10px;
+  background: #22c55e;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+
+
+.hero-display{
+  font-weight: 600;
+  letter-spacing: -.06em;
+  line-height: .9;
+  text-transform: uppercase;
+  margin: 0;
+  font-size: clamp(3.5rem, 11vw, 9rem);
+}
+
+.hero-intro-bottom{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 22px;
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.hero-corner{
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-size: .9rem;
+}
+
+@media (max-width: 768px){
+  .hero-intro-bottom{
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .logo-card{ width: 170px; height: 130px; }
+  .logo-card img{ max-width: 95px; }
+}
+
+/* Work cards */
+.work-card{
+  border:1px solid var(--border);
+  background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,0));
+  border-radius:var(--radius);
+  overflow:hidden;
+  transition: transform .18s ease, border-color .18s ease;
+}
+.work-card:hover{
+  transform: translateY(-4px);
+  border-color:#3a3a3a;
+}
+.work-thumb{
+  aspect-ratio: 16/10;
+  width:100%;
+  object-fit:cover;
+  display:block;
+  transition: transform 700ms cubic-bezier(.2,.8,.2,1);
+  transform: scale(1);
+}
+.work-card:hover .work-thumb{
+  transform: scale(1.07);
+}
+.work-body{
+  padding:16px 18px 18px;
+}
+.work-title{
+  font-weight:800;
+  margin:0;
+  letter-spacing:-.02em;
+}
+.work-meta{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  align-items:center;
+  margin-top:10px;
+  color:var(--muted);
+  font-size:.92rem;
+}
+.pill{
+  border:1px solid var(--border);
+  padding:.28rem .6rem;
+  border-radius:999px;
+}
+
+/* animation helper */
+[data-animate]{
+  will-change: transform, opacity;
+}
+
+/* Magic cursor */
+#magic-cursor{position:fixed;left:0;top:0;pointer-events:none;z-index:10000;mix-blend-mode:difference;}
+#magic-cursor #ball{width:18px;height:18px;border-radius:999px;background:#fff;transform:translate(-50%,-50%) scale(1);opacity:.9;}
+@media (hover:none){#magic-cursor{display:none;}}
+
+/* Full image sink */
+
+
+.full-image-box.sink-frame{
+  
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  transform: translateZ(0);
+  .full-image-box.sink-frame{
+  height: clamp(460px, 78vh, 800px); /* taller */
+}
+
+}
+.full-image-box.sink-frame .sink-img{
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transform: translate3d(0, -18px, 0) scale(1.16);
+  transform-origin: 50% 50%;
+  will-change: transform;
+  transition: transform 700ms cubic-bezier(.2,.8,.2,1);
+}
+.full-image-box.sink-frame.is-hover .sink-img{
+  transform: translate3d(0, 0px, 0) scale(1.20);
+}
+
+/* Featured Work header */
+.featured-head{
+  display:grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 28px;
+  align-items:end;
+  margin-bottom: 22px;
+}
+.featured-title{
+  margin:0;
+  font-weight:600;
+  letter-spacing:-.04em;
+  line-height:.92;
+  text-transform:uppercase;
+  font-size: clamp(2.6rem, 5.8vw, 4rem);
+}
+.featured-right{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  gap: 14px;
+}
+.featured-copy{
+  margin:0;
+  color: var(--text);
+  max-width: 520px;
+  font-weight:600;
+  line-height:1.45;
+  font-size: 1.05rem;
+}
+
+/* More About */
+.about-showcase{
+  padding: 92px 0 0;
+  position: relative;
+  overflow: hidden;
+}
+.about-showcase-title{
+  text-align: center;
+  font-weight: 900;
+  letter-spacing: -.06em;
+  line-height: .92;
+  text-transform: uppercase;
+  font-size: clamp(2.6rem, 7vw, 5.6rem);
+  margin-bottom:50px;
+}
+
+.moreboutimg{
+  width: 375px;
+  height:250px;
+  margin-left:36%;
+  margin-top:10%;
+  
+}
+
+.ctaimg{
+  width:900px ;
+  height:600px ;
+  margin-left:5%;
+}
+.about-showcase .kicker{
+  text-align: center;
+  font-weight: 200;
+  letter-spacing: -.06em;
+  line-height: .92;
+  text-transform: uppercase;
+  font-size: clamp(2.6rem, 7vw, 1rem);
+
+}
+
+
+.moreabtimg{
+  width: 391px;
+  height: 950px;
+  
+
+}
+
+.moreabtimg img{
+  width: 100%;
+  height: 100%;
+  margin-left: 271.5%;
+ 
+}
+.about-circle{
+  width: min(520px, 70vw);
+  aspect-ratio: 1 / 1;
+  border-radius: 999px;
+  overflow: hidden;
+  margin: 34px auto 0;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  position: relative;
+  z-index: 3;
+  margin-top: -90px;
+}
+.about-circle img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.about-showcase-copy{
+  max-width: 680px;
+  margin: -500px 80px 0;
+  text-align: center;
+  
+}
+.about-showcase-quote{
+  margin: 0;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -.02em;
+  line-height: 1.25;
+  font-size: clamp(1.2rem, 2.2vw, 2rem);
+}
+.about-showcase-muted{
+  margin: 18px auto 0;
+  max-width: 860px;
+  color: var(--text);
+  opacity: .9;
+  line-height: 1.6;
+  font-size: 1.3rem;
+}
+.about-showcase-btn{
+  margin-top: 18px;
+  padding: .85rem 1.4rem;
+  font-weight: 800;
+}
+
+/* logo marquee */
+.logo-marquee{
+  margin-top: 121.689px;
+  padding: 36px 0 72px;
+  overflow: hidden;
+  border-top: 1px solid var(--border);
+}
+.logo-track{
+  display: flex;
+  gap: 22px;
+  align-items: center;
+  width: max-content;
+  will-change: transform;
+  animation: logoMarquee 22s linear infinite;
+}
+.logo-marquee:hover .logo-track{
+  animation-play-state:running;
+}
+.logo-card{
+  width: 220px;
+  height: 160px;
+  border-radius: 18px;
+  background: rgba(255,255,255,.02);
+  border: 1px solid var(--border);
+  display: grid;
+  place-items: center;
+  transform: rotate(-8deg);
+  box-shadow: 0 18px 40px rgba(0,0,0,.35);
+}
+.logo-card:nth-child(2n){
+  transform: rotate(7deg);
+}
+.logo-card img{
+  width: 80px;
+  height: 65px;
+  opacity: .9;
+  /*filter: grayscale(1);*/
+}
+@keyframes logoMarquee{
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* Expertise */
+.expertise-section .expertise-head{ padding-top: 10px; }
+.expertise-section .expertise-title{
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: -.06em;
+  line-height: .88;
+  text-transform: uppercase;
+  font-size: clamp(3.5rem, 10vw, 4rem);
+}
+.experience-box{
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,0));
+  padding: 26px;
+  position: relative;
+  overflow: hidden;
+  min-height: 400px;
+}
+.experience-box h4{
+  margin: 0 0 12px;
+  font-weight: 600;
+  letter-spacing: -.02em;
+  text-transform: uppercase;
+}
+.experience-box h4 span:first-child{
+  display: block;
+  font-weight: 600;
+  letter-spacing: .12em;
+  color: var(--muted);
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+.experience-box ul{
+  margin-top: 10%;
+}
+.experience-box li{
+  
+  color: var(--muted);
+  max-width: 52ch;
+  line-height: 2.5;
+  list-style-type: disc;
+  font-size: 1.3rem;
+  padding-left: 20px;
+}
+
+/* Motivation */
+.motivation-section{
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+.motivation-grid{
+  display: grid;
+  grid-template-columns: 1.1fr 1.4fr;
+  gap: clamp(28px, 5vw, 70px);
+  align-items: start;
+}
+.motivation-title{
+  margin: 0;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: -.06em;
+  line-height: .9;
+  font-size: clamp(3.5rem, 8.8vw, 4rem);
+}
+.motivation-right{ padding-top: 10px; }
+.motivation-p{
+  margin: 0 0 34px;
+  font-size: clamp(1.05rem, 1.25vw, 1.35rem);
+  line-height: 1.7;
+  color: var(--text);
+  max-width: 60ch;
+}
+.motivation-p em{ font-style: italic; font-weight: 800; }
+.motivation-sign{
+  margin-top: 10px;
+  font-size: clamp(2.4rem, 3.2vw, 3.6rem);
+  letter-spacing: -.02em;
+  opacity: .95;
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+/* Sticky helper */
+/* Sticky helper (ONLY for EXPERIENCE title) */
+#experience .sticky-col{
+  position: -webkit-sticky;
+  position: sticky;
+  top: 92px;
+  align-self: flex-start;
+  height: fit-content;
+}
+
+/* DO NOT disable sticky at 991px */
+@media (max-width: 991px){
+  /* keep sticky on tablets too */
+  #experience .sticky-col{
+    position: -webkit-sticky;
+    position: sticky;
+  }
+
+  .motivation-grid{ grid-template-columns: 1fr; }
+  .motivation-right{ padding-top: 0; }
+  .featured-head{ grid-template-columns: 1fr; align-items:start; }
+  .featured-right{ align-items:flex-start; }
+  .featured-copy{ max-width: 100%; }
+}
+
+/* If you REALLY want to disable sticky, do it only for small phones */
+@media (max-width: 767.98px){
+  #experience .sticky-col{ position: static; }
+
+  /* ✅ keep footer reveal smaller on phones */
+  :root{ --footer-reveal: 150px; }
+}
+
+/* Back to top */
+#backToTop{position:fixed;right:18px;bottom:18px;display:none;z-index:1000;}
+/* ✅ FIXED: this rule was breaking your CSS earlier */
+.feature span{
+  color: var(--muted);
+  font-weight: 900;
+  margin-right: 8px;
+}
+
+/* Footer (use ONLY this version) */
+.footer{
+  padding:72px;
+  border-top:1px solid var(--border);
+ 
+}
+.footer-cta{
+  border:1px solid var(--border);
+  border-radius:calc(var(--radius) + 8px);
+  background:rgba(255,255,255,.02);
+  padding:24px;
+}
+.footer-big{
+  font-weight:900;
+  letter-spacing:-.03em;
+  margin:0 0 10px;
+  font-size: clamp(1.6rem, 4vw, 2.6rem);
+}
+
+/*.footer{
+  padding:54px 0;
+  border-top:1px solid var(--border);
+}
+.footer-cta{
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,0));
+  padding:26px;
+}*/
+.footer-cta h3{
+  font-weight:950;
+  letter-spacing:-.03em;
+  margin:0 0 10px;
+}
+.footer-note{ color:var(--muted); margin:0; }
+
+/* Sticky sections */
+.sticky-section{padding:72px 0;}
+.sticky-grid{display:grid;grid-template-columns: 280px 1fr;gap:22px;}
+@media (max-width: 991px){.sticky-grid{grid-template-columns:1fr;}}
+.sticky-col{position:sticky;top:92px;align-self:start;}
+@media (max-width: 991px){.sticky-col{position:static;}}
+
+.timeline-card{
+  
+ 
+ border-bottom: 1px solid rgb(37, 36, 36);
+  padding:18px;
+  margin-bottom:14px;
+  margin-left:170px;
+}
+.timeline-head{
+  font-weight:900;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--muted);
+  font-size:1.82rem;
+}
+.timeline-card h4{margin:10px 0 6px;font-weight:900;}
+.timeline-card p{margin:0;color:var(--muted);}
+
+/* Timeline cards */
+.timeline-card .hdr{font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-size:.82rem;}
+.timeline-card span{color:var(--muted);font-weight:700;margin-left:.35rem;}
+
+#experience .kicker{
+    margin: 0;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -.06em;
+  line-height: .9;
+  font-size: clamp(3.5rem, 8.8vw, 5rem);
+}
+
+/* ONLY style the kicker inside the Experience sticky left column 
+#experience .kicker{
+  margin: 0;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -.06em;
+  line-height: .9;
+  font-size: clamp(3rem, 7vw, 5rem);
+  color: var(--text);
+}*/
+
+/* Stack / Awards */
+.stack-list{display:grid;gap:12px;}
+.stack-card{border:1px solid var(--border);border-radius:var(--radius);background:rgba(255,255,255,.02);padding:16px;display:grid;grid-template-columns: 58px 1fr;gap:14px; margin-left:180px}
+.stack-icon{width:58px;height:58px;border-radius:18px;border:1px solid var(--border);display:grid;place-items:center;background:rgba(255,255,255,.02);}
+.stack-icon img{width:34px;height:34px;object-fit:contain;opacity:.9;}
+.stack-card h4{margin:0;font-weight:900;}
+.stack-meta{display:flex;justify-content:space-between;align-items:center;margin-top:6px;color:var(--muted);font-weight:700;}
+.stack-card p{margin:8px 0 0;color:var(--muted);}
+
+.stack-content{
+  border: 1px solid var(--border);
+  border-radius:var(--radius);
+  background:rgba(255,255,255,.02);
+  padding:16px;
+}
+
+#stack .kicker{
+  margin: 0;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -.06em;
+  line-height: .9;
+  font-size: clamp(3.5rem, 8.8vw, 5rem);
+}
+
+/* CTA (your original rule, kept) */
+#cta .cta-top{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:18px;
+  flex-wrap:wrap;
+}
+
+/* About card (used by CTA too) */
+/*.about-card{
+  border:1px solid var(--border);
+ 
+  overflow:hidden;
+  background:var(--panel);
+  width: 300px;
+  height: 300px;
+}*/
+
+.contactimg{
+
+ width: 1050px ;
+ height: 700px; 
+}
+.about-card img{
+  width:300px;
+  height:300px;
+  object-fit:cover;
+  display:block;
+}
+
+/* =========================================================
+   ✅ ONLY CTA DESIGN OVERRIDES (Footer untouched)
+   - Makes CTA look like Bronx demo (centered hero layout)
+   - Does NOT touch footer styles/animations
+   ========================================================= */
+
+/* Keep your footer reveal space (if you are using it in HTML/JS) */
+#cta{
+  padding-bottom: calc(72px + var(--footer-reveal));
+}
+
+/* Center CTA content */
+#cta .cta-top{
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 14px;
+  width: 100%;
+}
+
+/* If your CTA has a big text element using .kicker, make it the big headline */
+#cta .kicker{
+  margin: 0;
+  color: var(--text);
+  font-weight: 900;
+  letter-spacing: -.04em;
+  text-transform: uppercase;
+  line-height: .88;
+  font-size: clamp(3.2rem, 9.2vw, 5rem);
+}
+
+/* Sub line “Have a project in mind?” (your h2 probably uses .section-title) */
+#cta .section-title{
+  margin: 0;
+  font-weight: 500;
+  letter-spacing: -.01em;
+  color: rgba(234,234,234,.9);
+  font-size: clamp(1.15rem, 2.2vw, 1.2rem);
+}
+
+/* Contact button (your CTA button) */
+#cta .btn{
+  margin-top: 6px;
+  background: #fff;
+  color: #000;
+  border: 1px solid #fff;
+  border-radius: 999px;
+  padding: .85rem 1.55rem;
+  font-weight: 800;
+  letter-spacing: .02em;
+}
+#cta .btn:hover{
+  filter: brightness(.95);
+}
+
+/* Make the CTA grid stack (image circle on top, text below) */
+#cta .row.g-3{
+  width:100%;
+  margin-top: 22px !important;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap: 26px;
+}
+
+/* Force both columns to full width (so it matches demo stack style) */
+#cta .row.g-3 > [class*="col-"]{
+  width: 100%;
+  max-width: 100%;
+}
+
+
+
+
+#cta .col-lg-5 .about-card{
+  border-radius: 999px;
+  aspect-ratio: 1 / 1;
+  overflow:hidden;
+  
+}
+
+/* Right content (remove big panel look, keep it clean like demo)*/
+#cta .col-lg-7{
+  max-width: 990px;
+  margin-left:3%;
+}
+#cta .col-lg-7 .about-card{
+  border: 0;
+  background: transparent;
+  padding: 0 !important;
+}
+#cta .col-lg-7 .about-card p{
+  margin: 0 auto 18px;
+  max-width: 70ch;
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .02em;
+  line-height: 1.55;
+  opacity: .92;
+  color: var(--text);
+  text-align: center;
+}
+
+.social .a{
+  font-size: 20px;
+}
+/* Social links become plain text style */
+#cta .col-lg-7 .about-card .d-flex{
+  justify-content: center;
+  
+  flex-wrap: nowrap;
+  
+}
+#cta .col-lg-7 .about-card .btn-outline-soft{
+  border: 0;
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+
+  font-weight: 900;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  font-size: .92rem;
+  color: var(--text);
+}
+#cta .col-lg-7 .about-card .btn-outline-soft:hover{
+  color: var(--accent);
+}
+
+/* Mobile tune */
+@media (max-width: 768px){
+  #cta .kicker{ font-size: clamp(2.6rem, 10vw, 4.2rem); }
+  #cta .section-title{ font-size: 1.1rem; }
+}
+
+
+/* ✅ CTA: center everything like Bronx demo */
+#cta{
+  text-align: center;
+}
+
+#cta .cta-top{
+  justify-content: center;     /* center the left + right block */
+  align-items: center;
+  gap: 40px;
+}
+
+/* remove the "button pushed to the right" look */
+#cta .cta-top > a{
+  margin-left: 0 !important;
+}
+
+.cta-top .section-title{
+  padding-top: 30px;
+}
+/* center the 2 columns (image + text) under the heading */
+#cta .row{
+  justify-content: center;
+}
+
+#cta .col-lg-5,
+#cta .col-lg-7{
+  display: flex;
+  justify-content: center;
+  
+}
+
+/* center inside the right text card */
+
+#cta .col-lg-7 .about-card .d-flex{
+  justify-content: center;   /* center social buttons */
+  padding: 10px;
+  
+}
+
+
+
+.work-thumb{
+  width: 100%;
+  height: clamp(220px, 26vw, 340px);
+  display: block;
+  object-fit: cover;
+}
+
+.work-model{
+  height: clamp(220px, 26vw, 340px);
+  aspect-ratio: auto;
+  pointer-events: none;
+  background: #0f0f0f;
+}
+
+
+/* If you want the same hover zoom feel */
+.work-card:hover .work-model{
+  transform: scale(1.07);
+}
+
+/* Make sure the model fills the box */
+.work-model::part(default-progress-bar){
+  display:none;
+}
+
+.motivation-sign img{
+  width: 300px;
+  height: 80px;
+  padding-right:10px;
+  
+}
+
